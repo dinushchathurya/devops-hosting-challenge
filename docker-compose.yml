@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+    web:
+        image: my-laravel-image
+        container_name: php
+        build:
+            context: ${PWD}
+        ports:
+            - 8000:8000
+        volumes:
+            - ./:/app
