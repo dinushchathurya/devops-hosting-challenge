@@ -1,6 +1,8 @@
-.idea/
-.terraform/
-.terraform.lock.hcl
-terraform.tfstate
-terraform.tfstate.backup
-terraform.tfvars
+# Terraform
+.terraform*
+*.tfstate*
+*.tfvars
+
+# Keys 
+*.key
+*.pem
