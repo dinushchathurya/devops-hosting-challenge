@@ -57,7 +57,6 @@ sudo chgrp -R jenkins /var/lib/jenkins/opt/
 # Wait for Jenkins to boot up
 sudo sleep 60
 
-
 export url="http://${public_dns}:8080"
 export user="${admin_username}"
 export password="${admin_password}"
@@ -67,19 +66,8 @@ export remote="${remote_repo}"
 export jobName="${job_name}"
 export jobID="${job_id}"
 
+
 sudo aws s3 cp s3://${bucket_config_name}/ ./ --recursive
 sudo chmod +x *.sh
 
 ./create_admin_user.sh
-./download_install_plugins.sh
-sudo sleep 120
-./confirm_url.sh
-./create_credentials.sh
-
-python -c "import sys;import json;print(json.loads(raw_input())['credentials'][0]['id'])" <<< $(./get_credentials_id.sh) > credentials_id
-
-./create_multibranch_pipeline.sh
-
-sudo rm *.sh credentials_id
-
-reboot

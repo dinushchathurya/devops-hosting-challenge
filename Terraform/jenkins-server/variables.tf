@@ -32,7 +32,6 @@ variable "repository-url" {
   type = string
 }
 
-
 variable "instance-id" {
   type = string
 }

@@ -1,3 +1,3 @@
 resource "random_id" "job-id" {
-    byte_length = 16
+  byte_length = 16
 }
