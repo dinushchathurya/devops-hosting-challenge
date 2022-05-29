@@ -7,4 +7,5 @@
 # Keys 
 *.key
 *.pem
-
+github
+github.pub
